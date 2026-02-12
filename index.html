@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFCI vs. GFCI: Life-Saving Difference for NJ Homeowners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #dbeafe;
+            --gfci-color: #16a34a;
+            --afci-color: #dc2626;
+            --dual-color: #8b5cf6;
+            --nj-blue: #0f766e;
+            --light: #ffffff;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #f8fafc;
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e40af 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid var(--primary);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Comparison Hero */
+        .comparison-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gfci-hero { border-left-color: var(--gfci-color); }
+        .afci-hero { border-left-color: var(--afci-color); }
+
+        .hero-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .gfci-hero .hero-icon { color: var(--gfci-color); }
+        .afci-hero .hero-icon { color: var(--afci-color); }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .gfci-hero .hero-tagline { color: var(--gfci-color); }
+        .afci-hero .hero-tagline { color: var(--afci-color); }
+
+        /* Detailed Sections */
+        .detail-section {
+            padding: 40px;
+            background: #f8fafc;
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid;
+        }
+
+        .gfci-detail { border-left-color: var(--gfci-color); }
+        .afci-detail { border-left-color: var(--afci-color); }
+        .dual-detail { border-left-color: var(--dual-color); }
+
+        .detail-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .gfci-detail .detail-icon { color: var(--gfci-color); }
+        .afci-detail .detail-icon { color: var(--afci-color); }
+        .dual-detail .detail-icon { color: var(--dual-color); }
+
+        .detail-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .location-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .location-wet { background: #dcfce7; color: var(--gfci-color); }
+        .location-living { background: #fee2e2; color: var(--afci-color); }
+
+        .code-ref {
+            background: var(--primary-light);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* NJ Code Section */
+        .nj-section {
+            padding: 40px;
+            background: #ecfdf5;
+        }
+
+        .nj-highlight {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border-left: 6px solid var(--nj-blue);
+            margin: 30px 0;
+        }
+
+        /* Identification Section */
+        .identify-section {
+            padding: 40px;
+        }
+
+        .identify-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .identify-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 40px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            text-align: center;
+        }
+
+        .resource-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 28px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+        }
+
+        .resource-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            color: #1e40af;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        /* Minimal Animation */
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .pulse-element {
+            animation: gentlePulse 4s infinite ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .comparison-hero {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+            
+            .detail-section, .nj-section, .identify-section, .cta-section {
+                padding: 25px;
+            }
+            
+            .detail-grid, .identify-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .resource-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-icon">
+                <i class="fas fa-shield-haltered"></i>
+            </div>
+            <h1>AFCI vs. GFCI: The Life-Saving Difference Every New Jersey Homeowner Should Know</h1>
+            <p class="tagline">GFCI: Shock Protection • AFCI: Fire Prevention • NJ Code Requirements</p>
+            <div style="background: rgba(255, 255, 255, 0.15); color: white; padding: 10px 20px; border-radius: 50px; display: inline-block; margin-top: 10px; font-size: 0.9rem;">
+                <i class="fas fa-bolt"></i> Two Letters, Two Missions • NEC • New Jersey Uniform Construction Code
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">300+</div>
+                <p style="color: var(--gray);">Electrocution deaths/year (pre-GFCI)</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50,000+</div>
+                <p style="color: var(--gray);">Home electrical fires/year (US)</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1971</div>
+                <p style="color: var(--gray);">GFCI first required (pool equipment)</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1999</div>
+                <p style="color: var(--gray);">AFCI first required (bedrooms)</p>
+            </div>
+        </div>
+
+        <div class="comparison-hero">
+            <div class="hero-card gfci-hero pulse-element">
+                <div class="hero-icon">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="hero-title">GFCI</div>
+                <div class="hero-tagline">Ground Fault Circuit Interrupter</div>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>Protects PEOPLE from SHOCK</strong></p>
+                <p>Detects ground faults—when electricity strays outside intended path (through water or a person). Trips in as little as 1/40th of a second, preventing fatal electrocution.</p>
+            </div>
+            
+            <div class="hero-card afci-hero">
+                <div class="hero-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="hero-title">AFCI</div>
+                <div class="hero-tagline">Arc Fault Circuit Interrupter</div>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>Protects PROPERTY from FIRE</strong></p>
+                <p>Detects arc faults—dangerous sparking caused by damaged wires, loose connections, or pinched cords. Interrupts circuit before arcing ignites framing or insulation.</p>
+            </div>
+        </div>
+
+        <section class="detail-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">Where They're Required (NEC & NJ Code)</h2>
+            
+            <div class="detail-grid">
+                <div class="detail-card gfci-detail">
+                    <div class="detail-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <div class="detail-title">GFCI Locations</div>
+                    <p><strong>Required in wet/damp areas (NEC 210.8)</strong></p>
+                    <div style="margin: 20px 0;">
+                        <span class="location-badge location-wet">Bathrooms</span>
+                        <span class="location-badge location-wet">Kitchens</span>
+                        <span class="location-badge location-wet">Garages</span>
+                        <span class="location-badge location-wet">Basements</span>
+                        <span class="location-badge location-wet">Laundry rooms</span>
+                        <span class="location-badge location-wet">Outdoors</span>
+                        <span class="location-badge location-wet">Crawl spaces</span>
+                        <span class="location-badge location-wet">Wet bars</span>
+                        <span class="location-badge location-wet">Sinks (within 6')</span>
+                    </div>
+                    <p><strong>New Jersey:</strong> Adopts NEC 2023. GFCI now required on 240V receptacles (EV chargers, air conditioners) in wet locations.</p>
+                    <div class="code-ref">⚠️ Test monthly: Press TEST, reset with RESET</div>
+                </div>
+                
+                <div class="detail-card afci-detail">
+                    <div class="detail-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="detail-title">AFCI Locations</div>
+                    <p><strong>Required in living areas (NEC 210.12)</strong></p>
+                    <div style="margin: 20px 0;">
+                        <span class="location-badge location-living">Bedrooms</span>
+                        <span class="location-badge location-living">Living rooms</span>
+                        <span class="location-badge location-living">Family rooms</span>
+                        <span class="location-badge location-living">Dens</span>
+                        <span class="location-badge location-living">Dining rooms</span>
+                        <span class="location-badge location-living">Hallways</span>
+                        <span class="location-badge location-living">Closets</span>
+                        <span class="location-badge location-living">Sunrooms</span>
+                        <span class="location-badge location-living">Recreation rooms</span>
+                    </div>
+                    <p><strong>New Jersey:</strong> All 15A and 20A, 120V branch circuits supplying outlets in dwelling unit family rooms, dining rooms, living rooms, parlors, libraries, dens, bedrooms, sunrooms, recreation rooms, closets, hallways, or similar rooms.</p>
+                    <div class="code-ref">⚠️ Not required: Bathrooms, garages, outdoors (covered by GFCI)</div>
+                </div>
+                
+                <div class="detail-card dual-detail">
+                    <div class="detail-icon">
+                        <i class="fas fa-shield"></i>
+                    </div>
+                    <div class="detail-title">Combination AFCI/GFCI</div>
+                    <p><strong>Dual-function breakers & receptacles</strong></p>
+                    <p>Provide both arc fault and ground fault protection in one device. Increasingly common for kitchens, laundry areas—where both hazards exist.</p>
+                    <p style="margin-top: 20px;"><strong>NEC 2023:</strong> Kitchen and laundry circuits now require both AFCI and GFCI protection. Dual-function devices simplify compliance.</p>
+                    <div style="margin-top: 20px;">
+                        <span class="location-badge" style="background: #ede9fe; color: var(--dual-color);">Kitchens</span>
+                        <span class="location-badge" style="background: #ede9fe; color: var(--dual-color);">Laundry</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nj-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">🇳🇯 New Jersey Specific Requirements</h2>
+            
+            <div class="nj-highlight">
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div style="font-size: 2.5rem;">
+                        <i class="fas fa-file-signature" style="color: var(--nj-blue);"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--dark); margin-bottom: 10px;">NJ Uniform Construction Code (UCC)</h3>
+                        <p>New Jersey adopts the National Electrical Code (NEC) with a typical 1-3 year delay. <strong>Current adoption: NEC 2020</strong>, moving toward NEC 2023.</p>
+                        <p style="margin-top: 15px;"><strong>Key NJ Amendments:</strong></p>
+                        <ul style="margin-top: 10px; list-style: none; padding-left: 0;">
+                            <li style="padding: 5px 0;">✓ Existing homes: AFCI not required retroactively—only new construction and renovations requiring permits.</li>
+                            <li style="padding: 5px 0;">✓ Replacing a receptacle: Must meet current code for that location (GFCI if in wet area).</li>
+                            <li style="padding: 5px 0;">✓ AFCI breakers required for extended wiring in bedrooms/family rooms during reno.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">🏘️ Older Homes (Pre-1999)</h4>
+                    <p>No AFCI protection in bedrooms. Strongly recommended upgrade during renovations. Insurance carriers increasingly inquire about AFCI protection.</p>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">🏠 2000s-2010s Homes</h4>
+                    <p>May have AFCI only in bedrooms. Kitchens and laundry likely GFCI-only. Dual-function not yet required.</p>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 12px;">
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">🏡 New Construction (2020+)</h4>
+                    <p>Full AFCI protection on all 15/20A living area circuits. GFCI in wet locations. Dual-function increasingly standard.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="identify-section">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">How to Identify Them</h2>
+            
+            <div class="identify-grid">
+                <div class="identify-card">
+                    <div style="font-size: 2rem; color: var(--gfci-color); margin-bottom: 15px;">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">GFCI Receptacle</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0;">✓ TEST and RESET buttons on face</li>
+                        <li style="padding: 5px 0;">✓ Usually located in bathrooms, kitchens, garages</li>
+                        <li style="padding: 5px 0;">✓ May protect downstream outlets</li>
+                    </ul>
+                </div>
+                
+                <div class="identify-card">
+                    <div style="font-size: 2rem; color: var(--afci-color); margin-bottom: 15px;">
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">AFCI Breaker</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0;">✓ Test button on breaker itself</li>
+                        <li style="padding: 5px 0;">✓ Labeled "AFCI" or "Combination AFCI"</li>
+                        <li style="padding: 5px 0;">✓ Reset like standard breaker</li>
+                    </ul>
+                </div>
+                
+                <div class="identify-card">
+                    <div style="font-size: 2rem; color: var(--dual-color); margin-bottom: 15px;">
+                        <i class="fas fa-shield-haltered"></i>
+                    </div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Dual-Function</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 5px 0;">✓ Breaker with TEST button</li>
+                        <li style="padding: 5px 0;">✓ Labeled "AFCI/GFCI"</li>
+                        <li style="padding: 5px 0;">✓ Receptacles with TEST/RESET + AFCI label</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #fefce8; border-radius: 12px;">
+                <p><i class="fas fa-question-circle" style="color: #eab308; margin-right: 10px;"></i> <strong>Can't tell? Test it.</strong> Push the TEST button. GFCI receptacle should click and cut power. AFCI breaker should trip. If neither happens, device may be mislabeled, damaged, or wired incorrectly—call an electrician.</p>
+            </div>
+        </section>
+
+        <section style="padding: 40px; background: white;">
+            <h2 style="color: var(--dark); margin-bottom: 20px; text-align: center;">Common Confusion, Critical Difference</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div style="background: #f3f4f6; padding: 25px; border-radius: 12px;">
+                    <div style="font-size: 1.8rem; color: #dc2626; margin-bottom: 10px;">⚠️</div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">GFCI Does NOT Detect Arcs</h4>
+                    <p>A GFCI will not trip on a smoldering cord behind your sofa. It only senses current leaking to ground—not dangerous sparking.</p>
+                </div>
+                
+                <div style="background: #f3f4f6; padding: 25px; border-radius: 12px;">
+                    <div style="font-size: 1.8rem; color: #dc2626; margin-bottom: 10px;">⚠️</div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">AFCI Does NOT Prevent Shock</h4>
+                    <p>An AFCI will not protect you from dropping a hair dryer in a sink. It detects series/parallel arcs, not ground faults.</p>
+                </div>
+                
+                <div style="background: #f3f4f6; padding: 25px; border-radius: 12px;">
+                    <div style="font-size: 1.8rem; color: #16a34a; margin-bottom: 10px;">✅</div>
+                    <h4 style="color: var(--dark); margin-bottom: 10px;">Both Save Lives</h4>
+                    <p>GFCIs have reduced electrocutions by 70% since 1970. AFCIs prevent an estimated 50,000+ fires annually. They are complementary, not interchangeable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3 style="color: var(--dark); margin-bottom: 15px;">Unsure About Your Home's Protection?</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                New Jersey homeowners can request an electrical safety inspection. Licensed electricians can identify missing GFCI/AFCI protection, recommend upgrades, and ensure your family is protected.
+            </p>
+            
+            <div class="resource-links">
+                <a href="https://www.dmmasterelectric.com/" class="resource-btn btn-primary">
+                    <i class="fas fa-bolt"></i> Electrician near me
+                </a>
+                <a href="https://maps.app.goo.gl/fA6VKGNecyC4BbNp7" class="resource-btn">
+                    <i class="fas fa-map"></i> My map
+                </a>
+                <a href="https://matrixdestinynet.github.io/Understanding-Your-Electrical-Panel/" class="resource-btn">
+                    <i class="fab fa-github"></i> Github Repositary
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 12px; font-size: 0.9rem; color: var(--gray);">
+                <i class="fas fa-lightbulb" style="color: var(--primary); margin-right: 8px;"></i>
+                <strong>NJ homeowner tip:</strong> Your home inspection report from purchase may note missing GFCI/AFCI protection. These are common, affordable upgrades. AFCI breakers cost $30-50 each; GFCI receptacles $15-25. Consider upgrading during panel replacement or renovation.
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 New Jersey Electrical Safety Guide | National Electrical Code (NEC) Reference | Updated February 2026</p>
+            <p style="margin-top: 10px;">This information is for educational purposes. Consult a licensed electrician for code interpretation and electrical work. NJUCC amendments subject to change.</p>
+        </footer>
+    </div>
+</body>
+</html>
